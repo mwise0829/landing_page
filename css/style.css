@@ -65,11 +65,7 @@ p {
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
-    width: 85%;
-    background-color: #fff;
-    box-shadow: 5px 5px #ddd;
-    margin: auto;
-    border-radius: 4px;
+
 }
 
 .main-hero {
