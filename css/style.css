@@ -1,21 +1,11 @@
-/*
- *
- * CSS written based on SMACSS architecture.
- * To learn more, visit: http://smacss.com/
- * 
- * For simplicity, no reset or normalize is added. 
- * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
- *
-*/
-
 
 /* ---- Base Rules ---- */
 body {
-    background: #BFAFB2;
     background: linear-gradient(0deg, #cf1259 0%,  #404e5c 100%);
     margin: 0;
-    font-family: 'Merriweather', serif;
-    color: #000;
+    font-family: 'Crafty Girls';
+    color: #fff;
+    font-size: 16px;
 }
 
 main {
@@ -38,8 +28,8 @@ main {
 
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
+    font-family: 'Crafty Girls';
+    font-size: 70px;
     margin: 2em 1rem;
 }
 
@@ -51,22 +41,22 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #e4d1d1;
-    font-family: 'Oxygen', Sans-Serif;
+    border-bottom: 1px solid #fff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3em;
-    color: #000;
+    color: #fff;
 }
 
 p {
-    line-height: 1.6em;
-    color: #000;
+    line-height: 25px;
+    color: #fff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
-
-}
+ }
 
 .main-hero {
     min-height: 40vh;
@@ -113,13 +103,13 @@ section {
 }
 
 
-a.your-active-class {
+.your-active-class {
     background: rgb(0, 0, 0);
     background-color: #FFFD85;
     color: #cf1259 !important;
 }
 
-button {
+#top_button {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -130,6 +120,7 @@ button {
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
+    background-color: #fff;
   }
   
   #top_button:hover {
