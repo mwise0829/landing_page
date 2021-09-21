@@ -37,5 +37,5 @@ createNavbar ();
 
 
 // Set sections as active
-document.addEventListener('scroll', setActive);
+
 
