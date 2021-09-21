@@ -4,35 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Megan Wise</title>
   <!-- Load icons/ Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  
+  <link href='https://fonts.googleapis.com/css?family=Crafty Girls' rel='stylesheet'>
 
-  <script src="https://kit.fontawesome.com/fb915725ac.js" crossorigin="anonymous"></script>
+  <script src="js/app.js" crossorigin="anonymous"></script>
   <!-- Load Styles -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- HTML Follows BEM naming conventions 
-  IDs are only used for sections to connect menu achors to sections -->
+
   <header class="page__header">
-      <nav class="navbar__menu">
-        
-      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <nav class="navbar__menu"> 
       <ul id="navbar__list">
         <li  class="menu_link"><a href="#"><i class="fal fa-lemon"></i></a></li>
       </ul>
     </nav>
   </header>
-  <main id="top">
-    <header class="main__hero">
-      <h1>Lemonade Company</h1>
+
+  <main>
+    <header class="main__hero" >
+      <h1 id="top">Lemonade Company</h1>
     </header>
-    <!-- Each Section has an ID (used for the anchor) and 
-    a data attribute that will populate the li node.
-    Adding more sections will automatically populate nav.
-    The first section is set to active class by default -->
+
     <section id="section1" data-nav="Services">
       <div class="landing__container">
         <h2>Services</h2>
@@ -41,6 +36,7 @@
         <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
       </div>
     </section>
+
     <section id="section2" data-nav="Inventory">
       <div class="landing__container">
         <h2>Inventory</h2>
@@ -51,7 +47,7 @@
     </section>
 
     <!--back to top button-->
-    <button type="button" onclick="topFunction()" id="top_button" title="Go to top"><i class="fad fa-chevron-double-up"></i></button>
+    <a type="button" class="button" id="top_button" title="Go to top" href="#top"><i class="fad fa-chevron-double-up"></i></a>
 
     <section id="section3" data-nav="Costs">
       <div class="landing__container">
@@ -75,6 +71,6 @@
   <footer class="page__footer">
     <p>Contact Me <a href="mailto: MWise0829@gmail.com"><i class="fad fa-at"></i></a></p>
   </footer>
-  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="C:\Users\38421\Desktop\js\app.js"></script>
 </body>
 </html>
