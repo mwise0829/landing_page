@@ -1,107 +1,41 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Define Global Variables
- * 
-//  */
-
-const navMenu = document.querySelector('#navbar__list');
-const navSections = document.querySelectorAll('section');
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
+const bar = document.querySelector('#navbar__list');
+const menuItem = document.querySelectorAll('section');
 
 // build the nav
-function buildNav() {
+function createNavbar () {
     const fragment = document.createDocumentFragment();
 
-    navSections.forEach((navSection) => {
-        const liTag = document.createElement('li');
-        const aTag = document.createElement('a');
-        aTag.innerText = navSection.getAttribute('data-nav');
-        aTag.setAttribute('class', 'menu__link');
+    menuItem.forEach((navItem) => {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.innerText = navItem.getAttribute('data-nav');
+        a.setAttribute('class', 'menu__link');
 
-        // scroll to anchor ID using scroll to event
-        aTag.addEventListener("click", () => {
-            navSection.scrollIntoView({behavior: "smooth"});
-            });
-        liTag.appendChild(aTag);
-        fragment.appendChild(liTag);
-    });
-    navMenu.appendChild(fragment);
-};
+        // Scroll to section on link click
+        a.addEventListener("click", () => {
+         navItem.scrollIntoView({behavior: "auto"})
+        });
+          li.appendChild(a);
+          fragment.appendChild(li)
+          ;
+        });
 
-function getVisibleSectionIndex() {
-    let minor = window.innerHeight;
-    visibleSectionIndex = -1;
-
-    navSections.forEach((navSection, index) => {
-        let offset = navSection.getBoundingClientRect();
-        if(Math.abs(offset.top) < minor){
-            minor = Math.abs(offset.top);
-            visibleSectionIndex = index;
-        }
-    });
-    return visibleSectionIndex;
-}
-
-function setActiveSection(){
-    visibleSectionIndex = getVisibleSectionIndex();
-
-    // If visibleSection exists
-    if(visibleSectionIndex != -1){
-        // create a list of Atags from navigation menu
-        let navATagList = document.querySelectorAll('.menu__link');
-
-        // Loop through all section
-        for (let i = 0; i < navSections.length; i++) {
-            // For section in viewport: Add active state to the section and navigation
-            if (i == visibleSectionIndex){
-                navSections[i].classList.add('your-active-class');
-                navATagList[i].classList.add('your-active-class');
-            }
-            // For other sections: Remove active state from the section and navigation
-            else{
-                navSections[i].classList.remove('your-active-class');
-                navATagList[i].classList.remove('your-active-class');
-            }
-        }; 
+        bar.appendChild(fragment);
     };
-}
 
-// Build navigation menu
-buildNav();
 
-// Set sections as active (highlight section and nav if section is in viewport)
-document.addEventListener('scroll', setActiveSection);
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
 
-//Back to top button
+// Build menu 
+createNavbar ();
 
-window.onscroll = function() {myFunction()};
 
-var navbar = document.getElementById("btn-top");
-var sticky = navbar.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("top_button")
-  } else {
-    navbar.classList.remove("top_button");
-  }
-}
+
+// Set sections as active
+document.addEventListener('scroll', setActive);
+
