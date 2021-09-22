@@ -21,7 +21,7 @@ function createNavbar() {
     fragment.appendChild(li);
   });
 
-  bar.appendChild(fragment)
+  bar.appendChild(fragment);
 };
 
 
