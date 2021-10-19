@@ -2,14 +2,15 @@
 /* ---- Base Rules ---- */
 body {
     background: linear-gradient(0deg, #cf1259 0%,  #404e5c 100%);
+    transition: 0.3s all;
     margin: 0;
     font-family: 'Crafty Girls';
     color: #fff;
     font-size: 16px;
 }
 
-main {
-
+.active-section {
+    background-color: #404e5c !important;
 }
 
 .fad, .fal {
@@ -30,7 +31,7 @@ main {
 h1 {
     font-family: 'Crafty Girls';
     font-size: 70px;
-    margin: 2em 1rem;
+    margin: auto;
 }
 
 @media only screen and (min-width: 35em){
@@ -59,13 +60,14 @@ main {
  }
 
 .main-hero {
-    min-height: 40vh;
+    min-height: 10vh;
     padding-top: 3em;
 }
 
 section {
     position: relative;
-    min-height: 80vh;
+    height: 45vh;
+    border-radius: 5px;
 }
 
 .portrait {
@@ -151,14 +153,14 @@ section {
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
-    padding: 1em;
+    padding: 50px;
     text-align: left;
 }
 
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
-        padding: 4em;
+        padding: 50px;
     }
 }
 
@@ -168,95 +170,6 @@ section:nth-of-type(even) .landing__container {
     text-align: right; 
 }
 
-/* Background Circles */
-/* Note that background circles are created with psuedo elements before and after */
-/* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
-    content: '';
-    background:#fffd8534;
-    position: absolute;
-    z-index: -5;
-    width: 20vh;
-    height: 20vh;
-    border-radius: 15% 55%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(even) .landing__container::before {
-    content: '';
-    background: rgb(255,255,255);
-    background: #fffd8534;
-    position: absolute;
-    top: 3em;
-    right: 3em;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 15% 55%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background:#fffd8534;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 15% 55%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n + 1) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background:#fffd8534;
-    position: absolute;
-    right: 20vw;
-    bottom: -5em;
-    z-index: -5;
-    width: 15vh;
-    height: 15vh;
-    border-radius: 55% 15%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
 
 
-/* ---- Theme State Rules ---- */
-/* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-}
 
-section.your-active-class .landing__container::before {
-    opacity: 1;
-    animation: rotate 4s linear 0s infinite forwards;
-}
-
-section.your-active-class .landing__container::after {
-    opacity: 1;
-    animation: rotate 5s linear 0s infinite forwards reverse;
-}
-
-/* Section Active Styles Keyframe Animations */
-@keyframes rotate {
-	from {
-		transform: rotate(0deg)
-		           translate(-1em)
-		           rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg)
-		           translate(-1em) 
-		           rotate(-360deg);
-	}
-}
