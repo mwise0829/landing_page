@@ -26,10 +26,44 @@ function createNavbar() {
 
 
 /**
- * End Main Functions
+ * End body Functions
  * Begin Events
  * 
 */
 
 // Build menu 
 createNavbar();
+
+//active class
+
+window.onscroll = function(){
+    if (window.pageYOffset > 50) {;
+          document.getElementById('section1').style.background = "gray";
+    } 
+    else {
+        document.getElementById('section1').style.background = "transparent";
+     }
+    
+     if (window.pageYOffset > 500) {;
+        document.getElementById('section2').style.background = "darkgray";
+     } 
+    else {
+      document.getElementById('section2').style.background = "transparent";
+     }
+
+     if (window.pageYOffset > 1000) {;
+        document.getElementById('section3').style.background = "gray";
+     } 
+    else {
+      document.getElementById('section3').style.background = "transparent";
+     }
+
+     if (window.pageYOffset > 1700) {;
+        document.getElementById('section4').style.background = "darkgray";
+     } 
+    else {
+      document.getElementById('section4').style.background = "transparent";
+     }
+       
+    };
+
